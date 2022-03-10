@@ -2,7 +2,7 @@
 
 This repository serves as a public display of my coursework for prospective employers and anyone else interested in the material.
 
-<b>PLEASE</b> do not attempt to re-use this material for your own Drexel classes. I'm more than happy to set up a half-hour call with you to discuss your assignments instead. I am incredibly honored to have studied with my professors and know that their assignments cultivate valuable experience in their students $\rightarrow$ Please don't cheat!
+<b>PLEASE</b> do not attempt to re-use this material for your own Drexel classes. I'm more than happy to set up a half-hour call with you to discuss your assignments instead. I am incredibly honored to have studied with my professors and know that their assignments cultivate valuable experience in their students --> Please don't cheat!
 
 ## Courses
 
