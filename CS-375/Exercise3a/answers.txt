@@ -1,0 +1,52 @@
+
+Adin Solomon, abs358
+
+1a
+
+Hello!
+
+1b
+
+host, connection, dnt, accept, referer, cookie
+
+1c
+
+GET
+
+1d
+
+connection, content length, keep alive
+
+1e
+
+200, meaning a successful GET
+
+1f
+
+the font of 'Hello!' changed because instead of rendering plaintext, it rendered text as html using the default font
+
+1g
+
+this is because the request handler serves the same response regardless of the url in the request
+
+2a
+
+a) Hello!
+b) (on the next lines)
+I got a request!
+Request URL: /
+Request headers: { host: '127.0.0.1:3000', 'user-agent': 'curl/7.78.0', accept: '*/*' }
+Request method: GET
+
+2b
+
+curl only has host and accept headers. the user-agent also specified curl instead of a browser
+
+2c
+
+The output from curl in verbose mode is very similar to the information presented in the network tab. This is because the server doesn't differentiate between requests varying in the ways that these requests do.
+
+2d
+
+curl returns the text of the html that was sent over
+the browser renders the html the way browsers do

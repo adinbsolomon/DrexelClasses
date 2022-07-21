@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://www.cs.drexel.edu/~nkl43/cs375_summer_2020/exercises/css/template.html -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Exercise 2b</title>
+
+	<style type="text/css">
+		/* 1b */
+		table {
+			border-collapse: collapse;
+		}
+		.table-cell {
+			width: 25px;
+			height: 25px;
+			border: 1px solid black;
+			text-align: center;
+		}
+	</style>
+
+</head>
+
+<body class="vsc-initialized" data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="">
+
+	<h1>Your Exercise 2b Solutions</h1>
+
+	<h2>Tables solutions</h2>
+
+	<table id="number-grid"></table>
+
+	<button id="increment-button">Increment</button>
+
+	<script type="text/javascript">
+
+		// 1a
+		function createTableFrom2DArray(arr2d) {
+			let table = document.getElementById("number-grid");
+			for (let r of arr2d) {
+				let row = document.createElement("tr");
+				for (let item of r) {
+					let cell = document.createElement("td");
+					cell.classList.add("table-cell");
+					cell.textContent = item;
+					row.appendChild(cell);
+				}
+				table.appendChild(row);
+			}
+		}
+		//createTableFrom2DArray([[1, 2, 3], [4, 5, 6]]);
+
+		// 1c
+
+		let numberGrid = [
+			[1, 2, 3],
+			[4, 5, 6]
+		];
+		
+		createTableFrom2DArray(numberGrid);
+		
+		function onClick() {
+			incrementGrid();
+			updateTable();
+		}
+		
+		let button = document.getElementById("increment-button");
+		button.addEventListener("click", onClick);
+		
+		function incrementGrid() {
+			for (let i = 0; i < numberGrid.length; i++) {
+				let row = numberGrid[i];
+				for (let j = 0; j < row.length; j++) {
+					let num = numberGrid[i][j];
+					numberGrid[i][j] = num + 1;
+				}
+			}
+		}
+		
+		function updateTable() {
+			// I hope I'm not doing this wrong...
+			document.getElementById("number-grid").innerHTML = '';
+			createTableFrom2DArray(numberGrid);
+		}
+		
+	</script>
+
+	<h2>CSS answers</h2>
+
+	<h3>2a</h3>
+
+	<p>Because the margin doesn't get the background color from the element in question - its transparent and the parent can show through.</p>
+
+	<h3>2b</h3>
+
+	<p>Yes! the padding is included inside the border, and the background color applied to that space.</p>
+
+	<h3>3</h3>
+
+	<p>This is because they're divs - divs are stacked vertically unless otherwise specified</p>
+
+	<h3>4</h3>
+
+	<p>The styling would need to include the relative position.</p>
+
+	<h3>5</h3>
+
+	<p>The absolute positioning causes the element to be positioned within the parent without regard for its sibglings.</p>
+
+	<h3>6</h3>
+
+	<p>Because the position is set back to the default, the top styling doesn't have any effect, and the green box is positioned below the blue box as if it had no styling.</p>
+
+	<h3>7</h3>
+
+	<p>span elements appear inline by default</p>
+
+	<h3>8</h3>
+
+	<p>text-align: center</p>
+
+	<h3>9</h3>
+
+	<p>Probably because I'm a novice developer :/ --> it doesn't apply to divs</p>
+
+	<h3>10</h3>
+
+	<p>display: flex; justify-content: center; align-items: center;</p>
+
+
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>

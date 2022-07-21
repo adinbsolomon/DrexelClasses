@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>API Demo</title>
+    <style>
+        #temp-container {
+            border-collapse: collapse;
+        }
+
+        #temp-container td,
+        th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <label for="zip">Zip code:</label>
+        <input id="zip" type="number" value="19104">
+    </div>
+
+    <button id="send">Send request</button>
+
+    <div>
+        <table id="response-table">
+            <tr>
+                <th>Zip code</th>
+                <th>Temperature in Fahrenheit</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let zipInput = document.getElementById("zip");
+
+        // sends request to web server when button clicked
+        let sendButton = document.getElementById("send");
+        sendButton.addEventListener("click", function () {
+            let url = `/feels-like?zip=${zipInput.value}`; // ADD ZIP TO QUERY STRING HERE
+            console.log("Client sending request to URL:", url);
+            fetch(url).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log("Client received from server:", data);
+
+                let responseTable = document.getElementById("response-table");
+                let newRow = document.createElement("tr");
+                let newZip = document.createElement("td");
+                newZip.textContent = zipInput.value;
+                newZip.classList.add("table-cell");
+                let newTemp = document.createElement("td");
+                newTemp.textContent = data.feelsLikeFahrenheit;
+                newTemp.classList.add("table-cell");
+                newRow.appendChild(newZip);
+                newRow.appendChild(newTemp);
+                responseTable.appendChild(newRow);
+
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

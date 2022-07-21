@@ -1,0 +1,15 @@
+/* add any CSS styles you want here */
+
+.board {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.board-space {
+    width: 20px;
+    height: 20px;
+}
+
+.alive {
+    background-color: gray;
+}

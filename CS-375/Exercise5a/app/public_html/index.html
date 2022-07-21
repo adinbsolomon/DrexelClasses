@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+</head>
+<body>
+
+<p>Your pet:</p>
+
+<div>
+	<label for="name">Name:</label>
+	<input id="name" type="text" name="name">
+</div>
+<div>
+	<label for="age">Age:</label>
+	<input id="age" type="number" name="age">
+</div>
+<div>
+	<label for="species">Species:</label>
+	<select id="species" name="species">
+		<option value="">Please select your pet's species</option>
+		<option value="cat">Cat</option>
+		<option value="dog">Dog</option>
+		<option value="turtle">Turtle</option>
+		<option value="antelope">Antelope</option>
+	</select>
+</div>
+<button id="submit">Submit</button>
+
+<script>
+
+let nameInput = document.getElementById("name");
+let ageInput = document.getElementById("age");
+let speciesInput = document.getElementById("species");
+let button = document.getElementById("submit");
+
+button.addEventListener("click", function() {
+	console.log(nameInput.value);
+	// TODO print other fields
+	console.log(ageInput.value);
+	console.log(speciesInput.options[speciesInput.selectedIndex].text);
+	// TODO send POST request with fetch
+	fetch('/animal', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(
+			{name: nameInput.value, age: ageInput.value, species: speciesInput.options[speciesInput.selectedIndex].text}
+		),
+	}).then(function(response) {
+		console.log(response.status);
+	}).catch(function (error) {
+		console.log(error);
+	})
+});
+
+</script>
+
+</body>
+</html>

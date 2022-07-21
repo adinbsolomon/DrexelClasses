@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SEPTA</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 10px;
+		}
+		table, div, button {
+			margin: 1rem 0;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Next to arrive for Manayunk/Norristown line</h1>
+
+<div>
+	<label for="origin">Origin station:</label>
+	<select name="origin" id="origin-select">
+		<option value="">Please select an origin station</option>
+		<option value="Elm St">Elm Street</option>
+		<option value="Main St">Main Street</option>
+		<option value="Norristown TC">Norristown</option>
+		<option value="Conshohocken">Conshohocken</option>
+		<option value="Spring Mill">Spring Mill</option>
+		<option value="Miquon">Miquon</option>
+		<option value="Ivy Ridge">Ivy Ridge</option>
+		<option value="Manayunk">Manayunk</option>
+		<option value="Wissahickon">Wissahickon</option>
+		<option value="East Falls">East Falls</option>
+		<option value="Allegheny">Allegheny</option>
+		<option value="North Broad St">North Broad Street</option>
+		<option value="Temple U">Temple University</option>
+		<option value="Jefferson Station">Jefferson Station</option>
+		<option value="Suburban Station">Suburban Station</option>
+		<option value="30th Street Station">30th Street Station</option>
+		<option value="Penn Medicine Station">Penn Medicine Station</option>
+	</select>
+</div>
+
+<div>
+	<label for="destination">Destination station:</label>
+	<select name="destination" id="destination-select">
+		<option value="">Please select a destination station</option>
+		<option value="Elm St">Elm Street</option>
+		<option value="Main St">Main Street</option>
+		<option value="Norristown TC">Norristown</option>
+		<option value="Conshohocken">Conshohocken</option>
+		<option value="Spring Mill">Spring Mill</option>
+		<option value="Miquon">Miquon</option>
+		<option value="Ivy Ridge">Ivy Ridge</option>
+		<option value="Manayunk">Manayunk</option>
+		<option value="Wissahickon">Wissahickon</option>
+		<option value="East Falls">East Falls</option>
+		<option value="Allegheny">Allegheny</option>
+		<option value="North Broad St">North Broad Street</option>
+		<option value="Temple U">Temple University</option>
+		<option value="Jefferson Station">Jefferson Station</option>
+		<option value="Suburban Station">Suburban Station</option>
+		<option value="30th Street Station">30th Street Station</option>
+		<option value="Penn Medicine Station">Penn Medicine Station</option>
+	</select>
+</div>
+
+<button id="get-button">Get trains next to arrive</button>
+
+<div id="message-div"></div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Train</th>
+			<th>Departure Time</th>
+			<th>Arrival Time</th>
+			<th>Delay</th>
+		</tr>
+	</thead>
+	<tbody id="train-table"></tbody>
+</table>
+
+<script src="client.js"></script>
+
+</body>
+</html>

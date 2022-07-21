@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="zip-container">
+        <label id="zip-label" for="zip">Zip code:</label>
+        <input id="zip-input" type="number" value="19104">
+        <button id="zip-button">Send request</button>
+        <span id=zip-message></span>
+    </div>
+
+    <table>
+        <tbody id="forecast-table">
+            <tr id="forecast-table-header">
+                <th>Date</th>
+                <th>Forecast</th>
+                <th>Temperature</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        // Table manipulations
+        let forecastTable = document.getElementById("forecast-table");
+        function addForecastRow({date, forecast, temperature, icon}, header=false) {
+            let newRow = document.createElement("tr");
+            newRow.appendChild(makeCell(date, header));
+            newRow.appendChild(makeCell(forecast, header, icon));
+            newRow.appendChild(makeCell(temperature, header));
+            if (header) { newRow.classList.add("forecast-table-header")}
+            forecastTable.appendChild(newRow);
+        }
+        function makeCell(textContent, header, icon=null) {
+            let newCell = document.createElement(header ? "th" : "td");
+            newCell.textContent = textContent;
+            if (icon) {newCell.appendChild(getIcon(icon));}
+            return newCell;
+        }
+        function getIcon(icon) {
+            let baseUrl = "http://openweathermap.org/img/wn";
+            let iconElement = document.createElement("img");
+            iconElement.src = `${baseUrl}/${icon}@2x.png`;
+            return iconElement;
+        }
+        function clearTable() {
+            if (forecastTable.children.length === 1){ return; }
+            forecastTable.innerHTML = "";
+            let forecastTableHeader = document.createElement("tr");
+            addForecastRow({
+                date: "Date",
+                forecast: "Forecast",
+                temperature: "Temperature",
+                icon: null
+            }, header=true)
+        }
+
+        // Zip code request behavior
+        let zipInput = document.getElementById("zip-input");
+        let zipButton = document.getElementById("zip-button");
+        let zipMessage = document.getElementById("zip-message");
+        function displayMessage(message) { zipMessage.textContent = message; }
+        function resetError() { displayMessage(""); }
+        zipButton.addEventListener("click", function() {
+
+            resetError();
+            let zip = zipInput.value;
+            console.log(zip);
+
+            fetch(`/forecast?zip=${zip}`).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                clearTable();
+                console.log(data);
+                if (data.error) {
+                    displayMessage(data.error);
+                } else {
+                    displayMessage(`Five day forecast for: ${data.city}`);
+                    for (let forecastItem of data.forecast_data) {
+                        addForecastRow(forecastItem);
+                    }
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CS375 Summer 2020</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="practicum-exam-2">Practicum Exam 2</h1>
+<p>For this exam, you’ll write a full-stack web application to display a list of which trains are next to arrive for a given regional rail stop along the Manyunk/Norristown line, using SEPTA’s <a href="http://app.septa.org/nta/">Next to Arrive API</a>.</p>
+<h2 id="starter-code">Starter Code</h2>
+<p>The code in the provided <code>starter/</code> folder has this directory structure:</p>
+<pre><code>starter
+├── app
+│   ├── public
+│   │   ├── client.js
+│   │   └── index.html
+│   └── server.js
+├── env.json
+├── package-lock.json
+└── package.json</code></pre>
+<p>To run your server:</p>
+<ul>
+<li>cd into <code>starter/</code> and run <code>npm install</code> to install the axios and Express packages.</li>
+<li>cd into <code>starter/app</code> and run <code>node server.js</code> to start your server.</li>
+<li>Visit <code>http://localhost:3000</code> to see the <code>index.html</code> file.</li>
+</ul>
+<h2 id="submission">Submission</h2>
+<p>To submit your exam:</p>
+<ul>
+<li>Add your client-side code to <code>client.js</code> (this is sourced by <code>index.html</code>).</li>
+<li>Add your server-side code to <code>server.js</code>.</li>
+<li><strong>Don’t modify any other files as you won’t be submitting them</strong>.</li>
+<li>To submit, put your <code>client.js</code> and <code>server.js</code> files in a folder and zip it.</li>
+<li>Submit your zipped folder through the “Practicum 2 Assignment” portal in the Practicum Exam section on BBLearn.</li>
+<li>You shouldn’t submit any other files; <strong>only submit <code>client.js</code> and <code>server.js</code></strong> (in a zipped folder).</li>
+</ul>
+<h2 id="the-api">The API</h2>
+<p>We’ll use SEPTA’s <a href="http://app.septa.org/nta/">Next to Arrive API</a>. This API returns a list of trains that are next to arrive at a given origin station, going towards a given destination station. The URL format is:</p>
+<pre><code>http://www3.septa.org/hackathon/NextToArrive/Origin Station/Destination Station</code></pre>
+<p>A complete list of valid stations for the Manayunk/Norristown line is already provided a) in the dropdown options in <code>index.html</code> and b) in a list of strings in <code>server.js</code>.</p>
+<p>For example, if we send a GET request to the URL</p>
+<pre><code>http://www3.septa.org/hackathon/NextToArrive/Elm St/Norristown TC</code></pre>
+<p>we should see something like this (depending on the time of day and what trains will arrive soon):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_train&quot;</span><span class="fu">:</span> <span class="st">&quot;2323&quot;</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_line&quot;</span><span class="fu">:</span> <span class="st">&quot;Manayunk/Norristown&quot;</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_departure_time&quot;</span><span class="fu">:</span> <span class="st">&quot;4:08PM&quot;</span><span class="fu">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_arrival_time&quot;</span><span class="fu">:</span> <span class="st">&quot;4:14PM&quot;</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_delay&quot;</span><span class="fu">:</span> <span class="st">&quot;113 mins&quot;</span><span class="fu">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;isdirect&quot;</span><span class="fu">:</span> <span class="st">&quot;true&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_train&quot;</span><span class="fu">:</span> <span class="st">&quot;2329&quot;</span><span class="fu">,</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_line&quot;</span><span class="fu">:</span> <span class="st">&quot;Manayunk/Norristown&quot;</span><span class="fu">,</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_departure_time&quot;</span><span class="fu">:</span> <span class="st">&quot;7:08PM&quot;</span><span class="fu">,</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_arrival_time&quot;</span><span class="fu">:</span> <span class="st">&quot;7:14PM&quot;</span><span class="fu">,</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;orig_delay&quot;</span><span class="fu">:</span> <span class="st">&quot;On time&quot;</span><span class="fu">,</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;isdirect&quot;</span><span class="fu">:</span> <span class="st">&quot;true&quot;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div>
+<p>For this exam, you don’t need to worry about encoding spaces in URLs. All modern browsers will handle them appropriately.</p>
+<h2 id="your-task">Your Task</h2>
+<p>Add server-side code to <code>server.js</code> that does this:</p>
+<ul>
+<li>Create a request handler for the route GET <code>/next</code>.</li>
+<li>In this request handler, extract the <code>origin</code> and <code>destination</code> keys from the query string.</li>
+<li>If the origin or destination values aren’t in the list of stations, respond with status 400 and this <em>exact</em> JSON body: <code>{error: "Invalid origin or destination"}</code>.</li>
+<li>If the origin and destination stations are equal, respond with status 400 and this <em>exact</em> JSON body: <code>{error: "Origin and destination must be different"}</code>.</li>
+<li>Otherwise, if the origin and destination stations are valid, using axios, send a GET request to the SEPTA API.</li>
+<li><strong>You must use the <code>baseUrl</code> variable to construct your request URL</strong> or you’ll fail our unit tests.</li>
+<li>Respond with status 200 and a JSON body containing an object with the key <code>trains</code> where the value is the raw list of trains received from the SEPTA API, e.g.: <code>{trains: [... list of trains from API ...]}</code>.</li>
+<li>You don’t need to catch errors from the axios request for this exam.</li>
+</ul>
+<p>Add client-side code to <code>client.js</code> that does this:</p>
+<ul>
+<li>When the button with id <code>get-button</code> is clicked (defined in <code>index.html</code>), send an Ajax request to the GET <code>/next</code> route <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">using the Fetch API</a>.</li>
+<li>This request should have a query string with two parameters: <code>origin</code> and <code>destination</code>.</li>
+<li>The values of these parameters should be taken from the value of the currently selected option element in the dropdowns with ids <code>origin-select</code> and <code>destination-select</code>, respectively.
+<ul>
+<li>You may reference <a href="https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript/1085810#1085810">this Stack Overflow question</a> to write code to do this.</li>
+</ul></li>
+<li>If the response has a status code of 200, you should create a row for each train and append it to the table body with id <code>train-table</code>.
+<ul>
+<li>The “Train”, “Departure Time”, “Arrival Time”, and “Delay” columns should contain the raw text from the <code>orig_train</code>, <code>orig_departure_time</code>, <code>orig_arrival_time</code>, and <code>orig_delay</code> values, respectively.</li>
+<li>If a train’s <code>orig_delay</code> is equal to <code>"On time"</code>, color the row with a <code>lightgreen</code> background color.</li>
+</ul></li>
+<li>Otherwise, if the response has any other status code, you should display the text under the key <code>error</code> from the JSON response body in the div with id <code>message-div</code>.</li>
+<li>Each request should clear the previous trains and the previous error message, if any.</li>
+</ul>
+<p>Here’s how your code should work:</p>
+<video controls="controls">
+<source src="example.mp4" type="video/mp4">
+</video>
+</body>
+</html>

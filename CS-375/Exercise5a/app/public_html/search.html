@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		td, th {
+			border: 1px solid black;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<p>Search for:</p>
+
+<div>
+	<label for="species">Species:</label>
+	<select id="species" name="species">
+		<option value="">Please select your pet's species</option>
+		<option value="cat">Cat</option>
+		<option value="dog">Dog</option>
+		<option value="turtle">Turtle</option>
+		<option value="antelope">Antelope</option>
+	</select>
+</div>
+<button id="submit">Search</button>
+
+<table>
+	<tr><th>Name</th><th>Age</th><th>Species</th></tr>
+	<tbody id="results"></tbody>
+</table>
+
+<script>
+
+let table = document.getElementById("results");
+let button = document.getElementById("submit");
+
+button.addEventListener("click", function() {
+	// TODO get selected species from option list
+	// TODO send Ajax request to GET animals/
+	// with species in query string
+	// TODO append row results to table, clearing previous rows
+});
+
+</script>
+
+</body>
+</html>

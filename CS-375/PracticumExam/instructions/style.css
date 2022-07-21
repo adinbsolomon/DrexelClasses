@@ -1,0 +1,58 @@
+
+body {
+	margin: 0 auto;
+	padding: 2rem;
+	line-height: 1.3em;
+	color: #282828;
+	font-size: 1.1em;
+	/* this seemed to fit most code blocks 
+	and it's 2^9 + 2^8 + 2^6 which pleases me */
+	max-width: 832px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	/* this was needed to make the lines
+	not squish together when wrapping
+	why? beats me */
+	line-height: 1em;
+}
+
+/* slightly darker for code embedded in text */
+code {
+	background: #f0f0f0;
+}
+/* apply to code containing divs so if there's overflow
+it'll retain the correct background color when scrolling
+horizontally, because its container will also be colored */
+div.sourceCode {
+	background: #fbfbfb;
+}
+/* also apply to pre tags because if a fenced block doesn't
+have a language, it won't have a sourceCode class applied 
+to its container */
+pre {
+	background: #fbfbfb;
+}
+/* clear darker styling because it's not embedded in text */
+pre code {
+	background: #fbfbfb;
+}
+
+table {
+	border-collapse: collapse;
+}
+td {
+	border: 1px solid black;
+}
+
+img {
+	max-width: 100%;
+}
+
+video {
+	max-width: 100%;
+}
+
+figure {
+	margin: 1rem 0;
+}

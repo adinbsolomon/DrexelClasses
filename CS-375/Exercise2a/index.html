@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://www.cs.drexel.edu/~nkl43/cs375_summer_2020/exercises/dom_js/template.html -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Exercise 2a</title>
+	<style type="text/css">
+		/* 0 */
+		.example-div {
+			background: lightgreen;
+			width: 100px;
+			border: 1px solid black;
+		}
+
+		/* ADD YOUR STYLES BELOW */
+
+		/* 1 */
+		.box {
+			border: 1px solid black;
+			background: lightgray;
+			width: 100px;
+			height: 50px;
+			text-align: center;
+		}
+		.every-other {
+			color: red;
+		}
+
+		/* 2 */
+		.table-cell {
+			border: 1px solid black;
+			background-color: lightgray;
+			text-align: center;
+		}
+
+		/* 3 */
+
+		/* 4 */
+		.flipped {
+			color: red;
+		}
+	</style>
+</head>
+
+<body class="vsc-initialized" data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="">
+
+	<p>Modify the HTML in this template as needed, add CSS to the style tag above, and add JS to the script tag at the
+		end of this page (see the page's source code) to solve each exercise. Submit this file at the end of class for
+		grading.</p>
+
+	<h2>Example</h2>
+
+	<p>Say that one of the exercises was to write a function called <code>create5Divs</code> that created five divs with
+		a green background and appended them to a container with id <code>example-container</code>.</p>
+
+	<p>To solve this problem, we would include any needed styles in the style tag above (e.g. see the class
+		<code>example-div</code>) and write our <code>create5Divs</code> function in the script tag at the bottom of
+		this page (see the page's source).</p>
+
+	<div id="example-container">
+		<div class="example-div">I am div</div>
+		<div class="example-div">I am div</div>
+		<div class="example-div">I am div</div>
+		<div class="example-div">I am div</div>
+		<div class="example-div">I am div</div>
+	</div>
+
+
+	<!-- SOLUTIONS BELOW -->
+
+
+	<h1>Your Exercise 2a Solutions</h1>
+
+	<h3>1 - createBoxes</h3>
+
+	<div id="boxes-container"></div>
+
+	<h3>2 - createTable</h3>
+
+	<div id="table-container"></div>
+
+	<h3>3a/3b - The crown jewel</h3>
+
+	<div id="count-container"></div>
+
+	<h3>4 - Flipper</h3>
+
+	<p id="flip-me">Flip the color of this text between red and black</p>
+
+	<h3>5a/5b - removeChildren</h3>
+
+	<p>Why doesn't this code work correctly?</p>
+	<pre>function removeChildren(element) {
+	for (child of element.childNodes) {
+	    child.remove();
+	}
+}
+</pre>
+
+	<p>WRITE YOUR ANSWER HERE</p>
+
+	<p>Write your correct <code>removeChildren</code> function in the script tag below.</p>
+
+	<h3>6a/6b - Clock</h3>
+
+	<div id="clock-container"></div>
+
+	<h3>7 - createList</h3>
+
+	<div id="nested-container"></div>
+
+
+	<!-- SCRIPT TAG BELOW -->
+
+
+	<script type="text/javascript">
+		// 0
+		function createNDivs(n) {
+			let container = document.getElementById("example-container");
+			for (let i = 0; i < n; i++) {
+				let div = document.createElement("div");
+				div.textContent = "I am div";
+				div.classList.add("example-div");
+				container.append(div);
+			}
+		}
+		createNDivs(5);
+
+		// part 1
+		function createBoxes(strings) {
+			let container = document.getElementById("boxes-container");
+			for (let i of strings.keys()) {
+				let newBox = document.createElement("div");
+				newBox.textContent = strings[i];
+				newBox.classList.add("box");
+				if (i % 2 == 0) newBox.classList.add("every-other");
+				container.append(newBox);
+			}
+		}
+		createBoxes(["this", "is", "a", "test"]);
+
+		// part 2
+		function createTable(rows, columns) {
+			let container = document.getElementById("table-container")
+			let table = document.createElement("table");
+			for (let r of Array(rows).keys()) {
+				let row = document.createElement("tr");
+				for (let c of Array(columns).keys()) {
+					let cell = document.createElement("td");
+					cell.classList.add("table-cell");
+					cell.textContent = r + c;
+					row.appendChild(cell);
+					row.appendChild(cell);
+				}
+				table.append(row);
+			}
+			container.appendChild(table);
+		}
+		createTable(2,3);
+
+		// part 3a
+		function createCounter() {
+			let container = document.getElementById("count-container");
+			let count = 0;
+			function increment() {
+				count++;
+				container.textContent = count;
+			}
+			setInterval(increment, 500);
+		}
+		// createCounter();
+
+		// part 3b
+		//		interesting idea from https://stackoverflow.com/questions/21277900/how-can-i-pause-setinterval-functions
+		//		but I don't want the interval interval-ing while the count shouldn't be incrementing
+		function createCounter() {
+			let container = document.getElementById("count-container");
+			let countElement = document.createElement("div");
+			container.appendChild(countElement);
+			let count = 0;
+			countElement.textContent = count;
+			function increment() {
+				count++;
+				countElement.textContent = count;
+			}
+			let buttonStart = document.createElement("button");
+			let buttonStop = document.createElement("button");
+			buttonStart.textContent = "Start";
+			buttonStop.textContent = "Stop";
+			container.appendChild(buttonStart);
+			container.appendChild(buttonStop);
+			let countInterval = null;
+			function startCounter() {
+				if (countInterval == null) {
+					console.log("counter started");
+					countInterval = setInterval(increment, 500);
+				} else {}
+			}
+			function stopCounter() {
+				if (countInterval != null) {
+					console.log("counter stopped");
+					clearInterval(countInterval);
+					countInterval = null;
+				} else {}
+			}
+			buttonStart.addEventListener("click", startCounter);
+			buttonStop.addEventListener("click", stopCounter);
+		}
+		createCounter();
+
+		// part 4
+		function createFlipper() {
+			let flippyboi = document.getElementById("flip-me");
+			let button = document.createElement("button");
+			button.textContent = "Click to flip"
+			function flip() {
+				flippyboi.classList.toggle("flipped");
+			}
+			button.addEventListener("click", flip);
+			flippyboi.appendChild(button);
+		}
+		createFlipper();
+
+	</script>
+
+
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
