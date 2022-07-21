@@ -1,0 +1,7 @@
+#!/bin/bash
+
+createdb -U postgres db-a2
+
+psql -U postgres db-a2 -c "\i a2/set_a2.sql"
+
+psql -U postgres db-a2

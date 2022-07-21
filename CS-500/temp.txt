@@ -1,0 +1,110 @@
+ categoryid | count 
+------------+-------
+          1 |    12
+          2 |    12
+          3 |    13
+          4 |    10
+          5 |     7
+          6 |     6
+          7 |     5
+          8 |    12
+(8 rows)
+
+  categoryname  | count
+----------------+-------
+ Beverages      |    12
+ Condiments     |    12
+ Confections    |    13
+ Dairy Products |    10
+ Grains/Cereals |     7
+ Meat/Poultry   |     6
+ Produce        |     5
+ Seafood        |    12
+(8 rows)
+
+ count
+-------
+    29
+(1 row)
+
+ count
+-------
+    91
+(1 row)
+
+         companyname          | ordercount
+------------------------------+------------
+ Save-a-lot Markets           |         31
+ Ernst Handel                 |         30
+ QUICK-Stop                   |         28
+ Hungry Owl All-Night Grocers |         19
+ Folk och fä HB               |         19
+ Rattlesnake Canyon Grocery   |         18
+ Berglunds snabbköp           |         18
+ HILARION-Abastos             |         18
+ Bon app'                     |         17
+ Frankenversand               |         15
+ Lehmanns Marktstand          |         15
+ Wartian Herkku               |         15
+ Hanari Carnes                |         14
+ Königlich Essen              |         14
+ La maison d'Asie             |         14
+ Bottom-Dollar Markets        |         14
+ LILA-Supermercado            |         14
+ White Clover Markets         |         14
+ Queen Cozinha                |         13
+ Around the Horn              |         13
+ Mère Paillarde               |         13
+ LINO-Delicateses             |         12
+ Reggiani Caseifici           |         12
+ Suprêmes délices             |         12
+ Vaffeljernet                 |         11
+ Great Lakes Food Market      |         11
+ Ricardo Adocicados           |         11
+ Blondesddsl père et fils     |         11
+ Island Trading               |         10
+ Victuailles en stock         |         10
+ Old World Delicatessen       |         10
+ Godos Cocina Típica          |         10
+ Die Wandernde Kuh            |         10
+ Ottilies Käseladen           |         10
+ Richter Supermarkt           |         10
+ Tortuga Restaurante          |         10
+ B's Beverages                |         10
+ Piccolo und mehr             |         10
+ Magazzini Alimentari Riuniti |         10
+(39 rows)
+
+ count
+-------
+    64
+(1 row)
+
+ count
+-------
+     2
+(1 row)
+
+      city      | companycount
+----------------+--------------
+ London         |            6
+ México D.F.    |            5
+ Sao Paulo      |            4
+ Buenos Aires   |            3
+ Madrid         |            3
+ Rio de Janeiro |            3
+ Lisboa         |            2
+ Nantes         |            2
+ Paris          |            2
+ Portland       |            2
+(10 rows)
+
+   sum
+---------
+ 1786.88
+(1 row)
+
+ max
+-----
+   6
+(1 row)
