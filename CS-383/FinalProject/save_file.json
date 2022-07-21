@@ -1,0 +1,135 @@
+{
+    "confusion_matrix_description": "first index is real class, second is predicted, whereby 0 = Cat and 1 = Dog",
+    "confusion_matrix": [
+        [
+            0,
+            10
+        ],
+        [
+            0,
+            10
+        ]
+    ],
+    "classifications": [
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\10997.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\11308.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\9650.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\1739.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\5562.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\401.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\5940.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\3667.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\6921.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Cats\\4304.jpg",
+            "real_class": "Cat",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\8199.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\8154.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\3812.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\1621.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\5379.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\630.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\12349.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\6741.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\873.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        },
+        {
+            "path": "c:\\Users\\adinb\\Documents\\Personal\\Drexel\\CS 383\\CS-383-Final\\Images\\Dogs\\6803.jpg",
+            "real_class": "Dog",
+            "predicted_class": "Dog",
+            "confidence_differential": 0
+        }
+    ]
+}
